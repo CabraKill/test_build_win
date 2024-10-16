@@ -18,8 +18,8 @@ jobs:
         run: flutter config --enable-windows-desktop
       - name: Build artifacts
         run: flutter build windows --release
-      - name: Build msix
-        run: flutter pub run msix:create
+      #- name: Build msix
+      #  run: flutter pub run msix:create
       - name: zip build directory
         run: powershell compress-archive -path build\windows\x64\runner\release\* -destinationpath build\windows\x64\runner\release\release.zip
       - uses: actions/upload-artifact@master
