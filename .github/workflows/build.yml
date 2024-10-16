@@ -20,19 +20,6 @@ jobs:
         run: flutter build windows --release
       - name: Build msix
         run: flutter pub run msix:create
-      #- name: Archive Release
-      #  uses: thedoctor0/zip-release@master
-      #  with:
-      #    type: "zip"
-      #    filename: MacRecoveryX-${{github.ref_name}}-windows.zip
-      #    directory: build/windows/runner/Release
-      #- name: Windows Release
-      #  uses: softprops/action-gh-release@v1
-      #  if: startsWith(github.ref, 'refs/tags/')
-      #  env:
-      #    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #  with:
-      #    files: build/windows/runner/Release/MacRecoveryX-${{github.ref_name}}-windows.zip
       - name: zip build directory
         run: powershell compress-archive -path build\windows\x64\runner\release\* -destinationpath build\windows\x64\runner\release\release.zip
       - uses: actions/upload-artifact@master
