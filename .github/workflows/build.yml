@@ -2,6 +2,9 @@ name: Flutter CI
 
 on: push
 
+permissions:
+  contents: write
+
 jobs:
   build-and-release-windows:
     runs-on: windows-latest
