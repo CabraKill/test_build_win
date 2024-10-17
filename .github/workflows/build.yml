@@ -26,10 +26,10 @@ jobs:
         run: flutter build windows --release
       #- name: Build msix
       #  run: flutter pub run msix:create
-      #- uses: actions/upload-artifact@master
-      #  with:
-      #    name: windows
-      #    path: build\windows\x64\runner\Release
+      - uses: actions/upload-artifact@master
+        with:
+          name: windows
+          path: build\windows\x64\runner\Release
       #- name: zip build directory
       #  run: powershell compress-archive -path build\windows\x64\runner\release\* -destinationpath build\windows\x64\runner\release\release.zip
       #- name: Create Release
