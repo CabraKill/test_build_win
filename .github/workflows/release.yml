@@ -24,7 +24,7 @@ jobs:
       #- name: Build msix
       #  run: flutter pub run msix:create
       - name: zip build directory
-        run: powershell compress-archive -path build\windows\x64\runner\release\* -destinationpath build\windows\x64\runner\release\release.zip
+        run: powershell compress-archive -path build\windows\x64\runner\release\* -destinationpath release.zip
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
